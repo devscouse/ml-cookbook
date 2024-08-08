@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ml-cookbook"
+version = "0.1.0"
+description = "A package mainly for learning and devloping ML skills."
+authors = ["Me"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scikit-learn = "^1.5.1"
+pandas = "^2.2.2"
+python-dotenv = "^1.0.1"
+seaborn = "^0.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
