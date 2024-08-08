@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from dotenv import load_dotenv
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import (
     accuracy_score,
     confusion_matrix,
@@ -53,7 +53,7 @@ def eda(df: pd.DataFrame) -> None:
 
 
 def transform(X: pd.DataFrame) -> pd.DataFrame:
-    features = [passenger_cls, sib_spouse_cnt, par_child_cnt, fare_amt]
+    features = [passenger_cls, sib_spouse_cnt, par_child_cnt]
     return X[features]
 
 
@@ -109,4 +109,5 @@ if __name__ == "__main__":
     mdl = train(X_train, y_train)
     test(mdl, X_test, y_test)
 
+    plot_tree(mdl)
     plt.show()
